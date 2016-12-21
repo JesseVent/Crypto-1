@@ -23,15 +23,15 @@ module.exports = React.createClass({
         return(
             <form className="form" onSubmit={this.addCurrency}>
                 <div className="form-group">
-                    <label className="control-label" htmlFor="name">Currency Name:</label>
+                    <label className="control-label" htmlFor="name">Favorite Cryptocurrency:</label>
                     <input type="text" className="form-control" id="name" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="Currency Name" />
                 </div>
                 <div className="form-group">
-                    <label className="control-label" htmlFor="tagline">Tagline:</label>
-                    <input type="text" className="form-control" id="tagline" name="tagline" value={this.state.address} onChange={this.handleInputChange} placeholder="Tagline" />
+                    <label className="control-label" htmlFor="tagline">What is best about this Cryptocurrency?</label>
+                    <input type="text" className="form-control" id="tagline" name="tagline" value={this.state.address} onChange={this.handleInputChange} placeholder="Type your description" />
                 </div>
                 <div className="form-group">
-                    <button className="btn" type="submit">Add Currency</button>
+                    <button className="btn" type="submit">Add Comment</button>
                 </div>
             </form>
         )

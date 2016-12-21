@@ -1,5 +1,9 @@
 var mongoose = require("mongoose"),
-    bodyParser = require("body-parser");
+    bodyParser = require("body-parser"),
+    Pairs = require("../data/pairs"),
+    router = require("express").Router();
+
+router.route("/api/:pairs?").post(updatePairs);
 
 
 //Form the PROMISE using chunks
@@ -27,5 +31,7 @@ const getContent = function(url) {
 
 //execute the PROMISE
 getContent('https://btc-e.com/api/3/info')
-  .then((html) => return html)
-  .catch((err) => return 'There was an error collecting the data from BTCE');
+  .then((html) => html)
+  .catch((err) => 'There was an error collecting the data from BTCE');
+
+module.exports = router;

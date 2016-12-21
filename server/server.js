@@ -6,7 +6,7 @@ var express = require("express"),
 
 //controllers
 var currencyController = require("./controllers/currencyController");
-var promises = require("./data/promises");
+var promises = require("./controllers/pairsController");
 
 //Express request pipeline
 var app = express();
@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, "../app/dist")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use("/api", currencyController);
+app.use("/api", pairsController);
 
 
 
