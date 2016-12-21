@@ -1,6 +1,6 @@
 {
   "name": "Crypto",
-  "description": "A cryptocurrency app built on React and Node!",
+  "description": "A cryptocurrency app built on react, express, mongodb and nodejs!",
   "main": "server.js",
   "authors": [
     "Justin Degonda"

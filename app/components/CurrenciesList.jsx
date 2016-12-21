@@ -1,12 +1,13 @@
 var React = require("react");
 var CurrencyInfo = require("./CurrencyInfo.jsx")
+var AddCurrency = require("./AddCurrency.jsx");
 
 module.exports = React.createClass({
-   render(){
+   render:function(){
        return(
            <div className="row">
                 <div className="col-md-6">
-                    //We will add addCurrency functionality here
+                    <AddCurrency />
                 </div>
                 <div className="col-md-6">
                     {

@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var School = require("../data/currencies");
+var Currency = require("../data/currency");
 var _ = require("underscore");
 
 var router = require("express").Router();

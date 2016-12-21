@@ -1,36 +1,19 @@
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var path = require("path");
 
-var express = require('express'),
-    logger = require('morgan')('dev'),
-    Routes = require('./routes.js'),
-    bodyParser = require('body-parser'),
-    mongoose = require("mongoose"),
-    path = require("path");
-
-var PORT = process.env.PORT || 1337;
-
-var app = express();
-
-// mount logger middleware
-app.use(logger);
-
-// controllers
+//controllers
 var currencyController = require("./controllers/currencyController");
 
-// mount static file server middleware
-app.use(express.static(path.join(__dirname,"../app/dist")));
+//Express request pipeline
+var app = express();
+app.use(express.static(path.join(__dirname, "../app/dist")));
 app.use(bodyParser.json())
 app.use("/api", currencyController);
 
-// mount master routes
-Routes(app);
-
-app.listen(PORT, (error) => {
-    if(error) {
-        console.log("Server error: ", error);
-    } else {
-        console.log("Server started on port: ", PORT);
-    }
+app.listen(7777, function () {
+    console.log("Started listening on port", 7777);
 });
 
-// Connect to mongodb database
-mongoose.connect("mongodb://localhost/Cryptocurrency");
+mongoose.connect("mongodb://localhost/currencyfinder");
