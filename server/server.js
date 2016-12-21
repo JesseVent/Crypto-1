@@ -6,7 +6,7 @@ var express = require("express"),
 
 //controllers
 var currencyController = require("./controllers/currencyController");
-var promises = require("./controllers/pairsController");
+var pairsController = require("./controllers/pairsController");
 
 //Express request pipeline
 var app = express();
