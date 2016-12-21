@@ -31,7 +31,7 @@ module.exports = React.createClass({
                     <input type="text" className="form-control" id="tagline" name="tagline" value={this.state.address} onChange={this.handleInputChange} placeholder="Type your description" />
                 </div>
                 <div className="form-group">
-                    <button className="btn" type="submit">Add Comment</button>
+                    <button className="btn btn-p­rimary" type="submit">Add Comment</button>
                 </div>
             </form>
         )

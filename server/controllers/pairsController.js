@@ -1,9 +1,10 @@
 var mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
     Pairs = require("../data/pairs"),
+    promise = require("es6-promise"),
     router = require("express").Router();
 
-router.route("/api/:pairs?").put(updatePairs);
+router.route("/pairs/:pairs?").put(updatePairs);
 
 
 //Form the PROMISE using chunks
@@ -29,12 +30,12 @@ const getContent = function(url) {
     })
 };
 
-//execute the PROMISE
 function updatePairs(req, res){
-  getContent('https://btc-e.com/api/3/info')
-    .then((html) => res.json(html))
-    .catch((err) => res.send('There was an error collecting the data from BTCE', err));
+  Pairs.find(function(err, pairs){
+    getContent('https://btc-e.com/api/3/info')
+      .then((pairs) => res.json(pairs))
+      .catch((err) => res.send('There was an error collecting the data from BTCE', err));
+  })
 }
-
 
 module.exports = router;

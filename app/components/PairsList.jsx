@@ -6,11 +6,9 @@ module.exports = React.createClass({
    render:function(){
        return(
            <div className="row">
-                <div className="col-md-6">
-                    Cryptocurrency List will be here!
-                </div>
-                <div className="col-md-6">
-                    The data will come from a promise stream
+                <div className="col-md-6 alert">
+                    <div>Cryptocurrency List will be here!</div>
+                    <div>The data will come from a promise stream</div>
                 </div>
            </div>
        )
